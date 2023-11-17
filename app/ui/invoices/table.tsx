@@ -1,5 +1,8 @@
 import Image from 'next/image';
-import { UpdateInvoice, DeleteInvoice } from '@/app/ui/invoices/buttons';
+import {
+  UpdateInvoice,
+  DeleteInvoice,
+} from '@/app/ui/invoices/buttons';
 import InvoiceStatus from '@/app/ui/invoices/status';
 import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredInvoices } from '@/app/lib/data';
@@ -31,10 +34,13 @@ export default async function InvoicesTable({
                         className="mr-2 rounded-full"
                         width={28}
                         height={28}
+                        alt="Images Invoice Sample"
                       />
                       <p>{invoice.name}</p>
                     </div>
-                    <p className="text-sm text-gray-500">{invoice.email}</p>
+                    <p className="text-sm text-gray-500">
+                      {invoice.email}
+                    </p>
                   </div>
                   <InvoiceStatus status={invoice.status} />
                 </div>
@@ -56,7 +62,10 @@ export default async function InvoicesTable({
           <table className="hidden min-w-full text-gray-900 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
-                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
+                <th
+                  scope="col"
+                  className="px-4 py-5 font-medium sm:pl-6"
+                >
                   Customer
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
@@ -89,6 +98,7 @@ export default async function InvoicesTable({
                         className="rounded-full"
                         width={28}
                         height={28}
+                        alt="Image Invoice Sample"
                       />
                       <p>{invoice.name}</p>
                     </div>

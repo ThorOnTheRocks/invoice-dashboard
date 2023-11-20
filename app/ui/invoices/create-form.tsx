@@ -7,14 +7,22 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
+import { createInvoice } from '@/app/lib/actions';
 
-export default function Form({ customers }: { customers: CustomerField[] }) {
+export default function Form({
+  customers,
+}: {
+  customers: CustomerField[];
+}) {
   return (
-    <form>
+    <form action={createInvoice}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
-          <label htmlFor="customer" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="customer"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose customer
           </label>
           <div className="relative">
@@ -39,7 +47,10 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
 
         {/* Invoice Amount */}
         <div className="mb-4">
-          <label htmlFor="amount" className="mb-2 block text-sm font-medium">
+          <label
+            htmlFor="amount"
+            className="mb-2 block text-sm font-medium"
+          >
             Choose an amount
           </label>
           <div className="relative mt-2 rounded-md">
